@@ -1,3 +1,4 @@
+// src/components/ToggleTheme.jsx
 import React, { useEffect, useState } from 'react';
 
 export default function ToggleTheme() {
@@ -8,21 +9,16 @@ export default function ToggleTheme() {
   });
 
   useEffect(() => {
-    if (dark) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
+    document.documentElement.classList.toggle('dark', dark);
+    localStorage.setItem('theme', dark ? 'dark' : 'light');
   }, [dark]);
 
   return (
     <button
       onClick={() => setDark(!dark)}
-      className="text-sm px-3 py-1 bg-gray-200 dark:bg-gray-700 dark:text-white hover:bg-gray-300 rounded shadow"
+      className="text-sm px-3 py-1 bg-zinc-200 dark:bg-zinc-700 dark:text-white hover:bg-zinc-300 dark:hover:bg-zinc-600 rounded transition shadow"
     >
-      {dark ? '☀️ Light Mode' : '🌙 Dark Mode'}
+      {dark ? '☀️ Light' : '🌙 Dark'}
     </button>
   );
 }

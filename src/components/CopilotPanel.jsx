@@ -1,24 +1,29 @@
+// src/components/CopilotPanel.jsx
 import React from 'react';
+
+const suggestions = [
+  'Summarize this thread',
+  'Detect customer sentiment',
+  'Draft a follow-up message'
+];
 
 export default function CopilotPanel() {
   return (
-    <div className="h-full flex flex-col justify-between p-4 dark:bg-gray-900">
-      <div className="text-center mt-8">
+    <div className="p-4 text-sm space-y-4 dark:bg-zinc-900">
+      <div className="text-center mt-4">
         <div className="text-2xl">🤖</div>
-        <h2 className="text-lg font-semibold mt-2">Hi, I'm Fin AI Copilot</h2>
-        <p className="text-sm text-gray-500 mt-1">
-          Ask me anything about this conversation.
-        </p>
+        <h3 className="text-lg font-semibold mt-2">Fin AI Copilot</h3>
+        <p className="text-zinc-500 mt-1">How can I help with this conversation?</p>
       </div>
-      <div>
-        <label className="text-xs text-gray-500 mb-1 block">Suggested</label>
-        <div className="bg-gray-100 dark:bg-gray-800 rounded px-3 py-2 mb-3 text-sm">
-          How do I get a refund?
-        </div>
-        <input
-          className="w-full px-3 py-2 border rounded text-sm dark:bg-gray-800 dark:text-white"
-          placeholder="Ask a question..."
-        />
+      <div className="space-y-2">
+        {suggestions.map((text, index) => (
+          <div
+            key={index}
+            className="rounded-md px-3 py-2 bg-zinc-100 dark:bg-zinc-800 hover:bg-blue-100 dark:hover:bg-blue-600 cursor-pointer transition"
+          >
+            {text}
+          </div>
+        ))}
       </div>
     </div>
   );
