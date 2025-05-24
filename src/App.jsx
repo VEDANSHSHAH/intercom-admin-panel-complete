@@ -1,3 +1,4 @@
+import DashboardLayout from "./components/DashboardLayout";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Dashboard from "./pages/Dashboard";
