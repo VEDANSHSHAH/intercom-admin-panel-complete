@@ -1,16 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Dashboard from "./pages/Dashboard";
-import Layout from "./components/Layout";
 
-export default function App() {
+export default function Dashboard() {
   return (
-    <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-        </Routes>
-      </Layout>
-    </Router>
+    <div className="p-6">
+      <h1 className="text-2xl font-bold">Dashboard</h1>
+      <p>Welcome to your admin dashboard!</p>
+    </div>
   );
 }
