@@ -1,23 +1,21 @@
-// src/components/DetailsPanel.jsx
-import React from 'react';
+import React from "react";
 
 const details = {
-  assignee: 'Brian Byrne',
-  team: 'Success Support',
-  tags: ['refund', 'priority', 'vip'],
-  links: ['Back-office', 'Tracker ticket', 'CRM profile']
+  assignee: "Brian Byrne",
+  team: "Success Support",
+  tags: ["refund", "priority", "vip"],
+  links: ["Back-office", "Tracker ticket", "CRM profile"],
 };
 
 export default function DetailsPanel() {
   return (
-    <div className="p-4 text-sm space-y-6 dark:bg-zinc-900">
+    <div className="w-[280px] p-4 text-sm space-y-6 bg-white dark:bg-zinc-900 border-l border-zinc-200 dark:border-zinc-700">
       <div>
         <h4 className="text-zinc-500 font-semibold mb-1">Assignee</h4>
         <p>{details.assignee}</p>
         <h4 className="text-zinc-500 font-semibold mt-4 mb-1">Team</h4>
         <p>{details.team}</p>
       </div>
-
       <div>
         <h4 className="text-zinc-500 font-semibold mb-1">Tags</h4>
         <div className="flex flex-wrap gap-2">
@@ -28,7 +26,6 @@ export default function DetailsPanel() {
           ))}
         </div>
       </div>
-
       <div>
         <h4 className="text-zinc-500 font-semibold mb-1">Links</h4>
         <ul className="space-y-1">

@@ -1,24 +1,29 @@
-// src/components/ToggleTheme.jsx
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
+import { Moon, Sun } from "lucide-react";
 
 export default function ToggleTheme() {
-  const [dark, setDark] = useState(() => {
-    const saved = localStorage.getItem('theme');
-    if (saved) return saved === 'dark';
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
-  });
+  const [dark, setDark] = useState(false);
 
   useEffect(() => {
-    document.documentElement.classList.toggle('dark', dark);
-    localStorage.setItem('theme', dark ? 'dark' : 'light');
-  }, [dark]);
+    const isDark = localStorage.getItem("theme") === "dark";
+    setDark(isDark);
+    document.documentElement.classList.toggle("dark", isDark);
+  }, []);
+
+  const toggle = () => {
+    const newTheme = !dark;
+    setDark(newTheme);
+    document.documentElement.classList.toggle("dark", newTheme);
+    localStorage.setItem("theme", newTheme ? "dark" : "light");
+  };
 
   return (
     <button
-      onClick={() => setDark(!dark)}
-      className="text-sm px-3 py-1 bg-zinc-200 dark:bg-zinc-700 dark:text-white hover:bg-zinc-300 dark:hover:bg-zinc-600 rounded transition shadow"
+      onClick={toggle}
+      className="w-8 h-8 rounded-full flex items-center justify-center bg-zinc-200 dark:bg-zinc-700 text-zinc-800 dark:text-white hover:scale-105 transition"
+      title={dark ? "Light mode" : "Dark mode"}
     >
-      {dark ? '☀️ Light' : '🌙 Dark'}
+      {dark ? <Sun size={16} /> : <Moon size={16} />}
     </button>
   );
 }

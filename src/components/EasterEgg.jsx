@@ -1,22 +1,22 @@
-// src/components/EasterEgg.jsx
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export default function EasterEgg() {
-  const [count, setCount] = useState(0);
+  const [visible, setVisible] = useState(false);
 
   return (
-    <button
-      onClick={() => setCount((c) => c + 1)}
-      className="text-sm w-7 h-7 rounded-full border border-zinc-300 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-800 flex items-center justify-center text-zinc-500 dark:text-zinc-400"
-      title="Click me 3x!"
-    >
-      ?
-      {count >= 3 && (
-        <div className="absolute top-12 right-0 bg-blue-500 text-white px-3 py-1 rounded shadow">
-          🎉 You found an easter egg!
+    <div className="relative">
+      <button
+        onClick={() => setVisible((v) => !v)}
+        className="w-8 h-8 flex items-center justify-center rounded-full bg-purple-200 dark:bg-purple-700 text-white hover:scale-110 transition"
+        title="Try clicking me"
+      >
+        🪄
+      </button>
+      {visible && (
+        <div className="absolute right-0 mt-2 w-44 bg-white dark:bg-zinc-800 text-sm rounded shadow-lg p-2 z-10">
+          <p className="text-zinc-800 dark:text-white">✨ Hidden trick revealed!</p>
         </div>
       )}
-    </button>
+    </div>
   );
 }
-

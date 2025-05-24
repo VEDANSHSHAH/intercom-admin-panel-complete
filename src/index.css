@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  @apply bg-white dark:bg-gray-900 text-black dark:text-white;
+  @apply bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white;
 }

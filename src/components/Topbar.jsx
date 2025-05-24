@@ -1,18 +1,21 @@
 import React from "react";
+import ToggleTheme from "./ToggleTheme";
+import EasterEgg from "./EasterEgg";
 
 export default function Topbar() {
   return (
-    <header className="flex items-center justify-between px-6 py-3 border-b bg-white dark:bg-gray-900 dark:border-gray-800">
-      <h1 className="text-xl font-semibold text-gray-800 dark:text-white">Inbox</h1>
+    <header className="flex justify-between items-center px-4 py-2 bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-700 shadow-sm">
+      <h1 className="text-lg font-semibold text-zinc-800 dark:text-white">Inbox</h1>
       <div className="flex items-center gap-4">
-        <button className="text-gray-500 hover:text-black dark:hover:text-white transition">
-          Settings
-        </button>
-        <img
-          src="https://i.pravatar.cc/40?u=user"
-          alt="User"
-          className="w-8 h-8 rounded-full"
-        />
+        <EasterEgg />
+        <ToggleTheme />
+        <div className="w-8 h-8 rounded-full overflow-hidden border border-zinc-300 dark:border-zinc-600">
+          <img
+            src="https://i.pravatar.cc/40?img=5"
+            alt="User"
+            className="w-full h-full object-cover"
+          />
+        </div>
       </div>
     </header>
   );

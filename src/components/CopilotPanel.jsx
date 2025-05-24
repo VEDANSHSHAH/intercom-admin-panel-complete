@@ -1,15 +1,14 @@
-// src/components/CopilotPanel.jsx
-import React from 'react';
+import React from "react";
 
 const suggestions = [
-  'Summarize this thread',
-  'Detect customer sentiment',
-  'Draft a follow-up message'
+  "Summarize this thread",
+  "Detect customer sentiment",
+  "Draft a follow-up message",
 ];
 
 export default function CopilotPanel() {
   return (
-    <div className="p-4 text-sm space-y-4 dark:bg-zinc-900">
+    <div className="w-[280px] p-4 text-sm space-y-4 dark:bg-zinc-900 border-l border-zinc-200 dark:border-zinc-700">
       <div className="text-center mt-4">
         <div className="text-2xl">🤖</div>
         <h3 className="text-lg font-semibold mt-2">Fin AI Copilot</h3>
