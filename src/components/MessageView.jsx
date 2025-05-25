@@ -1,10 +1,20 @@
-
 import React from "react";
+import ChatBubble from "./ChatBubble";
+
+const messages = [
+  { from: "user", text: "When will it be delivered?", time: "30m" },
+  { from: "agent", text: "It will arrive by Friday.", time: "28m" },
+];
+
 export default function MessageView() {
   return (
-    <div className="flex-1 p-6 overflow-y-auto space-y-4">
-      <div className="bg-gray-100 w-fit px-4 py-2 rounded-lg">When will it be delivered?</div>
-      <div className="bg-blue-500 text-white w-fit px-4 py-2 rounded-lg ml-auto">It will arrive by Friday.</div>
-    </div>
+    <section className="flex-1 p-6 overflow-y-auto">
+      <h2 className="text-lg font-semibold mb-4">Ivan - Nike</h2>
+      <div className="space-y-2">
+        {messages.map((msg, index) => (
+          <ChatBubble key={index} message={msg} />
+        ))}
+      </div>
+    </section>
   );
 }

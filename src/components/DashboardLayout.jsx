@@ -1,18 +1,21 @@
-
 import React from "react";
+import Sidebar from "./Sidebar";
+import Topbar from "./Topbar";
 import ConversationList from "./ConversationList";
 import MessageView from "./MessageView";
 import CopilotPanel from "./CopilotPanel";
-import DetailsPanel from "./DetailsPanel";
 
 export default function DashboardLayout() {
   return (
     <div className="flex h-screen overflow-hidden">
-      <ConversationList />
-      <MessageView />
-      <div className="w-[300px] border-l">
-        <CopilotPanel />
-        <DetailsPanel />
+      <Sidebar />
+      <div className="flex flex-col flex-1">
+        <Topbar />
+        <div className="flex flex-1 overflow-hidden">
+          <ConversationList />
+          <MessageView />
+          <CopilotPanel />
+        </div>
       </div>
     </div>
   );
