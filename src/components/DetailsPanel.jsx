@@ -1,42 +1,24 @@
+
 import React from "react";
-
-const details = {
-  assignee: "Brian Byrne",
-  team: "Success Support",
-  tags: ["refund", "priority", "vip"],
-  links: ["Back-office", "Tracker ticket", "CRM profile"],
-};
-
 export default function DetailsPanel() {
   return (
-    <div className="w-[280px] p-4 text-sm space-y-6 bg-white dark:bg-zinc-900 border-l border-zinc-200 dark:border-zinc-700">
-      <div>
-        <h4 className="text-zinc-500 font-semibold mb-1">Assignee</h4>
-        <p>{details.assignee}</p>
-        <h4 className="text-zinc-500 font-semibold mt-4 mb-1">Team</h4>
-        <p>{details.team}</p>
+    <div className="p-4 space-y-2">
+      <h3 className="font-medium text-sm text-gray-700">Assignee</h3>
+      <p>Brian Byrne</p>
+      <h3 className="font-medium text-sm text-gray-700 mt-4">Team</h3>
+      <p>Success Support</p>
+      <h3 className="font-medium text-sm text-gray-700 mt-4">Tags</h3>
+      <div className="flex gap-2 text-xs">
+        <span className="bg-gray-200 px-2 py-1 rounded">#refund</span>
+        <span className="bg-gray-200 px-2 py-1 rounded">#priority</span>
+        <span className="bg-gray-200 px-2 py-1 rounded">#vip</span>
       </div>
-      <div>
-        <h4 className="text-zinc-500 font-semibold mb-1">Tags</h4>
-        <div className="flex flex-wrap gap-2">
-          {details.tags.map((tag, idx) => (
-            <span key={idx} className="bg-zinc-200 dark:bg-zinc-700 px-2 py-1 rounded text-xs">
-              #{tag}
-            </span>
-          ))}
-        </div>
-      </div>
-      <div>
-        <h4 className="text-zinc-500 font-semibold mb-1">Links</h4>
-        <ul className="space-y-1">
-          {details.links.map((label, idx) => (
-            <li key={idx} className="flex justify-between">
-              <span>{label}</span>
-              <button className="text-blue-500 text-xs hover:underline">+ Add</button>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <h3 className="font-medium text-sm text-gray-700 mt-4">Links</h3>
+      <ul className="text-sm text-blue-600 space-y-1">
+        <li>Back-office + Add</li>
+        <li>Tracker ticket + Add</li>
+        <li>CRM profile + Add</li>
+      </ul>
     </div>
   );
 }

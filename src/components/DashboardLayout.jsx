@@ -1,3 +1,4 @@
+
 import React from "react";
 import ConversationList from "./ConversationList";
 import MessageView from "./MessageView";
@@ -9,8 +10,10 @@ export default function DashboardLayout() {
     <div className="flex h-screen overflow-hidden">
       <ConversationList />
       <MessageView />
-      <CopilotPanel />
-      <DetailsPanel />
+      <div className="w-[300px] border-l">
+        <CopilotPanel />
+        <DetailsPanel />
+      </div>
     </div>
   );
 }

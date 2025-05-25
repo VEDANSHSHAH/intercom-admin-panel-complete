@@ -1,14 +1,12 @@
-import DashboardLayout from "./components/DashboardLayout";
+
+import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout";
-import Dashboard from "./pages/Dashboard";
+import DashboardLayout from "../components/DashboardLayout";
 
 export default function App() {
   return (
-    <Layout>
-      <Routes>
-        <Route path="/" element={<DashboardLayout />} />
-      </Routes>
-    </Layout>
+    <Routes>
+      <Route path="/" element={<DashboardLayout />} />
+    </Routes>
   );
 }
