@@ -1,6 +1,6 @@
 import React from "react";
 import Sidebar from "./sidebar";
-import Topbar from "./Topbar";
+import Topbar from "./topbar"
 import ConversationList from "./ConversationList";
 import MessageView from "./MessageView";
 import CopilotPanel from "./CopilotPanel";
